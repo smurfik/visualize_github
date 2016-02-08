@@ -20,4 +20,9 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def github_api
+    @client = Octokit::Client.new(:access_token => current_user.token)
+    render json: @client.user
+  end
+
 end
