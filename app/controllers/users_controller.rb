@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def github_api
     client = Octokit::Client.new(:access_token => current_user.token)
-    # render json: client.repositories
+    # render json: client.repositories[0].language
     # render json: [ location: client.user.location,
     #                following: client.user.following,
     #                followers: client.user.followers,
@@ -32,6 +32,24 @@ class UsersController < ApplicationController
     #                gists: client.user.public_gists,
     #                user: client.user
     #             ]
+  end
+
+  def language_chart
+    client = Octokit::Client.new(:access_token => current_user.token)
+    hash = Hash.new(0)
+    client.repositories.each do |repo|
+      if repo.language.nil?
+        hash["n/a"] += 1
+      else
+        hash[repo.language] += 1
+      end
+    end
+
+    languages = hash.map do |k,v|
+      { language: k, repos: v }
+    end
+
+    render json: languages
   end
 
 end

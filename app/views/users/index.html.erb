@@ -4,6 +4,8 @@
   <%= image_tag "#{current_user.avatar_url}", class: "logo" %>
   <%= link_to "My Github Page", "https://github.com/#{current_user.username}", class: "github-link", target: "blank" %>
   <div class="location"></div>
+  <div id="chart-container">
+  </div>
 <% else %>
   <header>
     <%= link_to "Sign in with github", "/auth/github", class: "btn" %>
