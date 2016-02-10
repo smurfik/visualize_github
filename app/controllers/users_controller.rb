@@ -21,16 +21,17 @@ class UsersController < ApplicationController
   end
 
   def github_api
-    @client = Octokit::Client.new(:access_token => current_user.token)
-    render json: [ location: @client.user.location,
-                   following: @client.user.following,
-                   followers: @client.user.followers,
-                   website: @client.user.blog,
-                   name: @client.user.name,
-                   repos: @client.user.public_repos,
-                   gists: @client.user.public_gists,
-                   user: @client.user
-                ]
+    client = Octokit::Client.new(:access_token => current_user.token)
+    # render json: client.repositories
+    # render json: [ location: client.user.location,
+    #                following: client.user.following,
+    #                followers: client.user.followers,
+    #                website: client.user.blog,
+    #                name: client.user.name,
+    #                repos: client.user.public_repos,
+    #                gists: client.user.public_gists,
+    #                user: client.user
+    #             ]
   end
 
 end
