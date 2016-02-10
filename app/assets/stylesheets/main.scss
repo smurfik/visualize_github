@@ -18,3 +18,8 @@ header {
   font-size: 20px;
   color: white;
 }
+
+.logo {
+  @include span-columns(1);
+  border-radius: 3px;
+}
