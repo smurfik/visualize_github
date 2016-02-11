@@ -6,20 +6,29 @@ header {
   background-image: url(https://s3-us-west-2.amazonaws.com/visualizing-github/github+copy.jpeg);
   height: 100vh;
   background-size: cover;
-  // opacity: 0.4;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .btn {
   font-size: 20px;
-  color: white;
+  margin-top: 40px;
+  border: 1px solid #656565;
+  border-radius: 2px;
+  padding: 7px;
+  height: 40px;
+  background: #80bbe5;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px #656565;
 }
 
 .logo {
   @include span-columns(1);
   border-radius: 3px;
+}
+
+.hi {
+  @include outer-container;
 }
