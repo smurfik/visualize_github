@@ -54,6 +54,8 @@ class UsersController < ApplicationController
       repo.type.slice!("Event")
       if repo.type.scan(/[A-Z][a-z]+/).count > 1
         repo.type = repo.type.scan(/[A-Z][a-z]+/).join(" ")
+      elsif repo.type == "Member"
+        repo.type = "Add Collaborator"
       end
       hash[repo.type] += 1
     end
