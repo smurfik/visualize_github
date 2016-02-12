@@ -1,8 +1,5 @@
 $(function() {
 
-  Highcharts.setOptions({
-   colors: ['#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
-  });
 
   $.get("/activity", function(response) {
 
@@ -16,6 +13,8 @@ $(function() {
         type: "pie",
         plotShadow: true
       },
+      colors:
+        ['#639FAB', '#BBCDE5', '#DC9596', '#865460', '#AAB6E4', '#DA627D', '#FFF263', '#6AF9C4'],
       plotOptions: {
         pie: {
           allowPointSelect: true,

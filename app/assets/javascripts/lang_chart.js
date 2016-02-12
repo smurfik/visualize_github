@@ -1,7 +1,4 @@
 $(function() {
-  Highcharts.setOptions({
-   colors: ['#564946', '#558564', '#49D49D', '#69EBD0', '#95F9E3', '#FF9655', '#FFF263', '#6AF9C4']
-  });
 
   $.get("/lang-chart", function(response) {
 
@@ -15,6 +12,8 @@ $(function() {
         type: "pie",
         plotShadow: true
       },
+      colors:
+        ['#564946', '#558564', '#49D49D', '#69EBD0', '#95F9E3', '#FF9655', '#FFF263', '#6AF9C4'],
       plotOptions: {
         pie: {
           allowPointSelect: true,
