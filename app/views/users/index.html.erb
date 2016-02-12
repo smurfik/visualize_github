@@ -7,16 +7,15 @@
     <h1>Hello <%= current_user.username.capitalize %>! It's nice to see you!</h1>
     <%= image_tag "#{current_user.avatar_url}", class: "logo" %>
     <div class="info">
-      <div><a href="personalsite">Personal Site</a></div>
-      <div>Location: <span class="location"></span></div>
+      <div class="l">Location: <span class="location"></span></div>
       <div>Following: <span class="following"></span></div>
       <div>Followers: <span class="followers"></span></div>
       <div># of repos: <span class="repos"></span></div>
       <div># of gists: <span class="gists"></span></div>
     </div>
     <div class="divider"></div>
-    <div id="chart-container"></div>
     <div id="chart-container-activity"></div>
+    <div id="chart-container"></div>
   </div>
 <% else %>
   <header>

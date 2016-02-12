@@ -2,6 +2,18 @@ body, a {
   margin: 0;
 }
 
+body {
+  font-family: "Lucida Grande", "Times New Roman", Georgia, Serif;
+}
+
+.color {
+  background-color: #f9e4d8;
+}
+
+.l {
+  margin-top: 30px;
+}
+
 header {
   background-image: url(https://s3-us-west-2.amazonaws.com/visualizing-github/github+copy.jpeg);
   height: 100vh;
@@ -34,6 +46,10 @@ header {
   border-radius: 3px;
 }
 
+.info {
+  @include span-columns(3);
+}
+
 .hi {
   @include outer-container;
 }
@@ -53,10 +69,6 @@ header {
   margin-right: 20px;
 }
 
-.info {
-  @include span-columns(2);
-}
-
 .divider:after {
   content: "";
   display: block;
@@ -70,4 +82,26 @@ header {
 
 #chart-container-activity {
   @include span-columns(6);
+}
+
+@media (max-width: 768px) {
+  .logo {
+    @include span-columns(2);
+    @include shift(2);
+  }
+  .info {
+    @include span-columns(5);
+  }
+
+  #chart-container {
+    @include span-columns(12);
+  }
+
+  #chart-container-activity {
+    @include span-columns(12);
+  }
+
+  .hi a:nth-child(1){
+    margin-right: 20px;
+  }
 }

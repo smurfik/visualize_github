@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     render json: [ location: github_user.location,
                    following: github_user.following,
                    followers: github_user.followers,
-                   website: github_user.blog,
                    repos: github_user.public_repos,
                    gists: github_user.public_gists,
                 ]
