@@ -1,4 +1,8 @@
 $(function() {
+  Highcharts.setOptions({
+   colors: ['#564946', '#558564', '#49D49D', '#69EBD0', '#95F9E3', '#FF9655', '#FFF263', '#6AF9C4']
+  });
+
   $.get("/lang-chart", function(response) {
 
     for (var i=0; i < response.length; i++) {
@@ -14,7 +18,14 @@ $(function() {
       plotOptions: {
         pie: {
           allowPointSelect: true,
-          cursor: 'pointer'
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+              color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+            }
+          }
         }
       },
       title: {
