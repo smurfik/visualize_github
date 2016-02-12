@@ -21,14 +21,14 @@ class UsersController < ApplicationController
   end
 
   def github_api
-    # github_user = client.user
-    # render json: [ location: github_user.location,
-    #                following: github_user.following,
-    #                followers: github_user.followers,
-    #                website: github_user.blog,
-    #                repos: github_user.public_repos,
-    #                gists: github_user.public_gists,
-    #             ]
+    github_user = client.user
+    render json: [ location: github_user.location,
+                   following: github_user.following,
+                   followers: github_user.followers,
+                   website: github_user.blog,
+                   repos: github_user.public_repos,
+                   gists: github_user.public_gists,
+                ]
   end
 
   def language_chart
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   end
 
   def activity
-    act = client.user_events(current_user.username, per_page: 30)
+    act = client.user_events(current_user.username, per_page: 100)
     hash = Hash.new(0)
     act.each do |repo|
       repo.type.slice!("Event")
