@@ -67,3 +67,7 @@ header {
 #chart-container {
   @include span-columns(6);
 }
+
+#chart-container-activity {
+  @include span-columns(6);
+}

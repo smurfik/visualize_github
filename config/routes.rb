@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get 'github-api', to: 'users#github_api'
   get 'lang-chart', to: 'users#language_chart'
+  get 'activity', to: 'users#activity'
 end
