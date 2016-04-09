@@ -1,5 +1,7 @@
 # Github Dashboard
 
+<http://visualize-github.herokuapp.com/>
+
 Create an application which shows a dashboard for a users Github data.
 
 - As a guest I can click a "Sign in with Github" button
